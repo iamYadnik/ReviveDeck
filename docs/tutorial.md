@@ -1,87 +1,88 @@
 
-# 🎮 ReviveDeck Tutorial
+# 📘 ReviveDeck User Tutorial
 
-Welcome to the official **ReviveDeck** tutorial. This guide will walk you through setting up the project, running the tools, and contributing to the open-source effort.
+Welcome to ReviveDeck — an open-source runtime to launch and manage Steam Deck Verified games on any hardware.
 
 ---
 
-## ✅ 1. Clone the Project
+## 🚀 Getting Started
 
+1. **Clone the Repository**
 ```bash
 git clone https://github.com/YOUR_USERNAME/ReviveDeck.git
 cd ReviveDeck
 ```
 
----
-
-## ⚙️ 2. Run Setup Script
-
+2. **Install Python Dependencies**
 ```bash
-chmod +x setup.sh
-./setup.sh
+pip install -r requirements.txt
 ```
 
-This installs required dependencies and sets up initial folders like:
-
-- `game_profiles/`
-- `scripts/`
-- `ui/`
-- `test_configs/`
-
----
-
-## 🔧 3. Create a Game Profile
-
+3. **Run the Unified Launcher**
 ```bash
-python scripts/game_profile_editor.py
+python ui/unified_gui_launcher.py
 ```
 
-Follow the prompts to generate a `.json` optimization profile.
-
----
-
-## 🛠️ 4. Test Optimization on Configs
-
-Make sure you have sample files in `test_configs/`, then run:
-
+4. **Or Open the Dashboard**
 ```bash
-python scripts/test_optimizer_runner.py
+python ui/gui_home_dashboard.py
 ```
 
-Check if the `.ini` or `.cfg` files were optimized correctly.
-
 ---
 
-## 🖥️ 5. Launch GUI Interface
+## 🛠 Key Features
 
+### 🎮 Launch & Manage Games
+Use the unified GUI to manage game profiles, settings, and launchers.
+
+### 📊 Track Usage
+Use `gui_stats_dashboard.py` to monitor playtime, launches, and more.
+
+### 🔄 Sync Steam Metadata
+Run `steam_api_integrator.py` to pull your Steam games and artwork:
 ```bash
-python ui/ui_launcher_integrated.py
+python scripts/steam_api_integrator.py
 ```
 
-Select and launch a game (simulation for now). This interface reads from:
+### 🗃 Backup & Restore
+Create or restore your settings archive:
+```bash
+python scripts/backup_manager.py
+```
 
-- `launcher_config.json`
-- `game_profiles/`
-- Logs actions in `revivedeck.log`
-
----
-
-## 📤 6. Contribute or Customize
-
-You can modify any part of the code and submit pull requests. Start here:
-
-- `scripts/` → Core logic tools
-- `ui/` → GUI launcher
-- `docs/` → Tutorials and guides
+### 🧾 Compare Profiles
+Launch the profile diff viewer to check what's changed:
+```bash
+python ui/gui_profile_diff_viewer.py
+```
 
 ---
 
-## 💬 Need Help?
+## 🔁 Customization
 
-Join the community on Discord or post issues on GitHub.
-
-Together, we’re building the Steam Deck experience for everyone.
+- 🎨 Icons & splash screens are in `assets/`
+- 🔧 Configs and logs are in the root directory
+- 🧹 Reset the environment via:
+```bash
+python scripts/reset_cleaner.py
+```
 
 ---
 
-Made with ❤️ by the ReviveDeck community.
+## 🧑‍💻 Developer Utilities
+
+- Use `task_scheduler.py` to run diagnostics & automation
+- Run lint checks with GitHub Actions CI
+
+---
+
+## 📦 Packaging Options
+
+- Use `appimage_bundler.py` for AppImage builds
+- Use `flatpak_manifest.json` for Flatpak + Flathub
+
+---
+
+For any issues, please check `CONTRIBUTORS.md` or open a GitHub Issue.
+
+_Thanks for supporting accessible gaming for all 🕹_
