@@ -1,0 +1,10 @@
+
+{
+    "preferred_resolution": "1280x720",
+    "fps_cap": 30,
+    "vsync": false,
+    "language": "en",
+    "theme": "dark",
+    "auto_optimize": true,
+    "game_install_path": "/home/user/.steam/steam/steamapps/common/"
+}
