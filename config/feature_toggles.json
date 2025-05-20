@@ -1,0 +1,9 @@
+{
+  "enabled_features": {
+    "theme_preview": true,
+    "usage_export": true,
+    "plugin_loader": true,
+    "splash_screen": true,
+    "auto_updates": false
+  }
+}
