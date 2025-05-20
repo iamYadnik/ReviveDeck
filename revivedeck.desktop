@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ReviveDeck
+Comment=Launch Steam Deck Verified games on any hardware
+Exec=python3 launcher_wrapper.py
+Icon=${PWD}/assets/revivedeck_icon.png
+Terminal=false
+Type=Application
+Categories=Game;Utility;
+StartupNotify=true
