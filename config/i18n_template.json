@@ -1,0 +1,21 @@
+{
+  "language": "en",
+  "strings": {
+    "title_dashboard": "ReviveDeck Dashboard",
+    "title_launcher": "Unified Game Launcher",
+    "title_stats": "Usage Statistics",
+    "title_diff": "Profile Difference Viewer",
+    "label_username": "Username",
+    "label_password": "Password",
+    "btn_login": "Log In",
+    "btn_launch": "Launch",
+    "btn_exit": "Exit",
+    "btn_settings": "Settings",
+    "msg_welcome": "Welcome to ReviveDeck!",
+    "msg_loading": "Loading...",
+    "msg_error": "An error occurred.",
+    "msg_success": "Operation completed successfully.",
+    "tooltip_refresh": "Click to refresh data",
+    "placeholder_search": "Search by card title..."
+  }
+}
