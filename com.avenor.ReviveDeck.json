@@ -1,0 +1,31 @@
+{
+  "app-id": "com.avenor.ReviveDeck",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "22.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "revivedeck-launch",
+  "modules": [
+    {
+      "name": "revivedeck",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p /app/bin",
+        "install -Dm755 revivedeck.py /app/bin/revivedeck-launch",
+        "cp -r ui config scripts plugins assets /app/bin/"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "."
+        }
+      ]
+    }
+  ],
+  "finish-args": [
+    "--share=network",
+    "--share=ipc",
+    "--socket=x11",
+    "--device=dri",
+    "--filesystem=home"
+  ]
+}
