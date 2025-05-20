@@ -1,4 +1,14 @@
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/iamYadnik/ReviveDeck?style=for-the-badge" alt="GitHub release">
+  <img src="https://img.shields.io/github/license/iamYadnik/ReviveDeck?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/workflow/status/iamYadnik/ReviveDeck/ReviveDeck%20Python%20CI?style=for-the-badge" alt="CI Status">
+  <img src="https://img.shields.io/github/stars/iamYadnik/ReviveDeck?style=for-the-badge" alt="Stars">
+  <img src="https://img.shields.io/github/issues/iamYadnik/ReviveDeck?style=for-the-badge" alt="Issues">
+</p>
 
+---
+
+> 🎮 **ReviveDeck** – Cross-platform launcher for running Steam Deck Verified games on any hardware.
 # ReviveDeck
 
 **ReviveDeck** is a cross-platform, open-source runtime and launcher designed to make Steam Deck Verified games playable on any hardware — from low-end legacy PCs to Android tablets.
