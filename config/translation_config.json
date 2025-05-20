@@ -1,0 +1,41 @@
+{
+  "supported_languages": ["en", "es", "de", "fr", "hi"],
+  "default_language": "en",
+  "translations": {
+    "en": {
+      "welcome": "Welcome to ReviveDeck!",
+      "settings": "Settings",
+      "exit": "Exit",
+      "dashboard": "Dashboard",
+      "profile": "Profile"
+    },
+    "es": {
+      "welcome": "¡Bienvenido a ReviveDeck!",
+      "settings": "Configuraciones",
+      "exit": "Salir",
+      "dashboard": "Tablero",
+      "profile": "Perfil"
+    },
+    "de": {
+      "welcome": "Willkommen bei ReviveDeck!",
+      "settings": "Einstellungen",
+      "exit": "Beenden",
+      "dashboard": "Armaturenbrett",
+      "profile": "Profil"
+    },
+    "fr": {
+      "welcome": "Bienvenue dans ReviveDeck !",
+      "settings": "Paramètres",
+      "exit": "Quitter",
+      "dashboard": "Tableau de bord",
+      "profile": "Profil"
+    },
+    "hi": {
+      "welcome": "ReviveDeck में आपका स्वागत है!",
+      "settings": "सेटिंग्स",
+      "exit": "बाहर निकलें",
+      "dashboard": "डैशबोर्ड",
+      "profile": "प्रोफ़ाइल"
+    }
+  }
+}
