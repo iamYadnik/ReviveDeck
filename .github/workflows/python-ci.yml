@@ -1,0 +1,30 @@
+
+name: ReviveDeck Python CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-check:
+    name: Lint Python Files
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Linter
+      run: pip install flake8
+
+    - name: Run Flake8 Linting
+      run: |
+        echo "🔍 Linting Python files..."
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics || true
