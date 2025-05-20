@@ -1,0 +1,30 @@
+
+{
+  "app-id": "com.revive.revivedeck",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "22.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "revivedeck",
+  "finish-args": [
+    "--share=network",
+    "--share=ipc",
+    "--socket=x11",
+    "--socket=wayland",
+    "--filesystem=home"
+  ],
+  "modules": [
+    {
+      "name": "revivedeck",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm755 unified_gui_launcher.py /app/bin/revivedeck"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "."
+        }
+      ]
+    }
+  ]
+}
