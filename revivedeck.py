@@ -1,37 +1,60 @@
-import argparse
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton
+from PyQt5.QtCore import Qt
 import subprocess
 
-TOOLS = {
-    "dashboard": "ui/gui_home_dashboard.py",
-    "welcome": "ui/gui_welcome_screen.py",
-    "settings": "ui/gui_settings_manager.py",
-    "profiles": "ui/gui_profile_manager.py",
-    "features": "ui/gui_feature_toggle_manager.py",
-    "backup": "ui/gui_backup_restore.py",
-    "stats": "ui/gui_stats_dashboard.py",
-    "logs": "ui/gui_diagnostic_log_viewer.py",
-    "sysinfo": "ui/gui_system_info.py",
-    "preview": "ui/theme_preview_tool.py",
-    "switcher": "ui/profile_switcher_widget.py",
-    "export": "scripts/usage_stats_exporter.py",
-    "validate": "plugin_validator.py",
-    "load_plugins": "plugin_loader.py",
-    "run_cron": "scripts/cron_task_runner.py"
-}
+class ReviveDeckLauncher(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("ReviveDeck Launcher")
+        self.setGeometry(300, 200, 600, 400)
+        self.init_ui()
 
-def launch_tool(tool_name):
-    script = TOOLS.get(tool_name)
-    if not script:
-        print(f"❌ Unknown tool: {tool_name}")
-        return
-    print(f"🚀 Launching: {tool_name}")
-    subprocess.run(["python", script])
+    def init_ui(self):
+        central = QWidget()
+        layout = QVBoxLayout()
 
-def main():
-    parser = argparse.ArgumentParser(description="ReviveDeck CLI Launcher")
-    parser.add_argument("tool", help="Tool to launch (e.g., dashboard, backup, sysinfo)")
-    args = parser.parse_args()
-    launch_tool(args.tool)
+        title = QPushButton("🎮 Open Game Dashboard")
+        title.setFixedHeight(60)
+        title.clicked.connect(lambda: self.launch_ui("ui/gui_home_dashboard.py"))
+        layout.addWidget(title)
+
+        fav = QPushButton("⭐ Open Favorites")
+        fav.setFixedHeight(50)
+        fav.clicked.connect(lambda: self.launch_ui("ui/gui_favorite_games_launcher.py"))
+        layout.addWidget(fav)
+
+        steam = QPushButton("🧩 Browse Steam Games")
+        steam.setFixedHeight(50)
+        steam.clicked.connect(lambda: self.launch_ui("ui/gui_steam_games_browser.py"))
+        layout.addWidget(steam)
+
+        recent = QPushButton("🔁 Recently Played")
+        recent.setFixedHeight(50)
+        recent.clicked.connect(lambda: self.launch_ui("ui/gui_recently_played_viewer.py"))
+        layout.addWidget(recent)
+
+        search = QPushButton("🔍 Search Games")
+        search.setFixedHeight(50)
+        search.clicked.connect(lambda: self.launch_ui("ui/gui_game_search.py"))
+        layout.addWidget(search)
+
+        kiosk = QPushButton("🖥 Kiosk Mode")
+        kiosk.setFixedHeight(50)
+        kiosk.clicked.connect(lambda: self.launch_ui("ui/gui_kiosk_launcher.py"))
+        layout.addWidget(kiosk)
+
+        central.setLayout(layout)
+        self.setCentralWidget(central)
+
+    def launch_ui(self, script_path):
+        try:
+            subprocess.Popen(["python", script_path])
+        except Exception as e:
+            print(f"❌ Error launching {script_path}: {e}")
 
 if __name__ == "__main__":
-    main()
+    app = QApplication(sys.argv)
+    launcher = ReviveDeckLauncher()
+    launcher.show()
+    sys.exit(app.exec_())
