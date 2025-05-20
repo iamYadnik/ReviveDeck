@@ -1,0 +1,17 @@
+{
+  "theme": "dark",
+  "dark": {
+    "background": "#1e1e1e",
+    "foreground": "#ffffff",
+    "accent": "#ff9800",
+    "button": "#333333",
+    "highlight": "#4caf50"
+  },
+  "light": {
+    "background": "#f4f4f4",
+    "foreground": "#000000",
+    "accent": "#3f51b5",
+    "button": "#ffffff",
+    "highlight": "#2196f3"
+  }
+}
