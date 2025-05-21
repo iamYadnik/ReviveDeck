@@ -1,0 +1,41 @@
+name: macOS Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v3
+
+      - name: 🔧 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 🧰 Install dependencies
+        run: |
+          pip install pyinstaller PyQt5
+          brew install create-dmg
+
+      - name: 🏗 Build .app bundle
+        run: |
+          chmod +x build_macos_app.sh
+          ./build_macos_app.sh
+
+      - name: 📦 Create DMG
+        run: |
+          chmod +x create_dmg.sh
+          ./create_dmg.sh
+
+      - name: 🚀 Upload release asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*.dmg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

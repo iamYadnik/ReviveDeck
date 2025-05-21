@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="assets/revivedeck_banner.svg" alt="ReviveDeck banner" />
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/github/v/release/iamYadnik/ReviveDeck?style=for-the-badge" alt="GitHub release">
   <img src="https://img.shields.io/github/license/iamYadnik/ReviveDeck?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/github/workflow/status/iamYadnik/ReviveDeck/ReviveDeck%20Python%20CI?style=for-the-badge" alt="CI Status">
